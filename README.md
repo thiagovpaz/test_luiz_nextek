@@ -20,8 +20,8 @@ Certifique-se de ter instalado:
 ### 1. Clonar o Repositório
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
-cd <NOME_DO_PROJETO>
+git clone <https://github.com/leduardopacheco/Nextek.git> ou <git@github.com:leduardopacheco/Nextek.git>
+cd <Nextek>
 ```
 
 ### 2. Rodar o Backend
@@ -64,4 +64,3 @@ cd <NOME_DO_PROJETO>
    - Adicionar tarefas
    - Editar, excluir e alternar o status
    - Buscar e filtrar tarefas
-
