@@ -1,10 +1,23 @@
-import React from 'react';
-import TaskList from './components/TaskList';
+import React from "react";
+import TaskList from "./components/TaskList";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => (
   <div>
-    <h1>Gerenciador de Tarefas</h1>
     <TaskList />
+    <ToastContainer
+      position="top-right"
+      autoClose={1800}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="colored"
+    />
   </div>
 );
 

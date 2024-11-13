@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from '../styles/TaskForm.module.css';
 
 const TaskForm = ({ onAddTask }) => {
   const [title, setTitle] = useState('');
@@ -12,8 +13,9 @@ const TaskForm = ({ onAddTask }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <input 
+        className={styles.input}
         type="text" 
         placeholder="Título" 
         value={title} 
@@ -21,12 +23,13 @@ const TaskForm = ({ onAddTask }) => {
         required 
       />
       <input 
+        className={styles.input}
         type="text" 
         placeholder="Descrição" 
         value={description} 
         onChange={(e) => setDescription(e.target.value)} 
       />
-      <button type="submit">Adicionar Tarefa</button>
+      <button className={styles.button} type="submit">Adicionar Tarefa</button>
     </form>
   );
 };

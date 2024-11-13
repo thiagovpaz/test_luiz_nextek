@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import styles from "../styles/TaskItem.module.css";
 
 const TaskItem = ({ task, onUpdateTask, onDeleteTask }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -12,37 +13,65 @@ const TaskItem = ({ task, onUpdateTask, onDeleteTask }) => {
   };
 
   const toggleStatus = () => {
-    const newStatus = status === 'pendente' ? 'concluída' : 'pendente';
+    const newStatus = status === "pendente" ? "concluída" : "pendente";
     setStatus(newStatus);
     onUpdateTask(task.id, { title, description, status: newStatus });
   };
 
   return (
-    <div>
+    <div className={styles.taskItem}>
       {isEditing ? (
-        <div>
-          <input 
-            type="text" 
-            value={title} 
-            onChange={(e) => setTitle(e.target.value)} 
+        <div className={styles.editContainer}>
+          <input
+            className={styles.input}
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Editar título"
           />
-          <input 
-            type="text" 
-            value={description} 
-            onChange={(e) => setDescription(e.target.value)} 
+          <textarea
+            className={styles.textarea}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder="Editar descrição"
           />
-          <button onClick={handleUpdate}>Salvar</button>
+          <div className={styles.editActions}>
+            <button
+              className={styles.cancelButton}
+              onClick={() => setIsEditing(false)}
+            >
+              Cancelar
+            </button>
+            <button className={styles.saveButton} onClick={handleUpdate}>
+              Salvar
+            </button>
+          </div>
         </div>
       ) : (
         <div>
-          <h3>{task.title}</h3>
-          <p>{task.description}</p>
-          <p>Status: {task.status}</p>
-          <button onClick={toggleStatus}>
-            {status === 'pendente' ? 'Concluída' : 'Pendente'}
-          </button>
-          <button onClick={() => setIsEditing(true)}>Editar</button>
-          <button onClick={() => onDeleteTask(task.id)}>Excluir</button>
+          <h3 className={styles.title}>{task.title}</h3>
+          <p className={styles.description}>{task.description}</p>
+          <p className={styles.status}>Status: {task.status}</p>
+          <div className={styles.actions}>
+            <button
+              className={`${styles.button} ${styles.toggle}`}
+              onClick={toggleStatus}
+            >
+              {status === "pendente" ? "Concluída" : "Pendente"}
+            </button>
+            <button
+              className={`${styles.button} ${styles.edit}`}
+              onClick={() => setIsEditing(true)}
+            >
+              Editar
+            </button>
+            <button
+              className={`${styles.button} ${styles.delete}`}
+              onClick={() => onDeleteTask(task.id)}
+            >
+              Excluir
+            </button>
+          </div>
         </div>
       )}
     </div>
