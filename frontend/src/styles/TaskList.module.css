@@ -2,17 +2,43 @@
     width: 50vh;
     margin: 0 auto;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: lightgrey;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.header {
+  }
+  
+  .header {
     text-align: center;
     font-size: 24px;
     color: #333;
-}
-
-.taskList {
+  }
+  
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+  
+  .searchInput {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1;
+  }
+  
+  .statusFilter {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: black;
+    cursor: pointer;
+  }
+  
+  .taskList {
     margin-top: 20px;
-}
+  }
+  

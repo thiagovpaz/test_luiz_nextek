@@ -52,7 +52,7 @@
     color: white;
 }
 
-/* Estilos para o modo de edição */
+/* Estilos do editar */
 .editContainer {
     display: flex;
     flex-direction: column;
